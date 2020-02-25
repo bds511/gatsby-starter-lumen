@@ -25,7 +25,7 @@ collections:
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Category", name: "category", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Tags", name: "tags", widget: "list", field: {label: Tag, namge :tag, widget: "String"}}
 
   - name: "pages"
     label: "Pages"
