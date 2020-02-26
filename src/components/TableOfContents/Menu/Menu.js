@@ -18,8 +18,8 @@ const NavItem = styled.div`
   }
   &.active {
     a {
-      color:black;
-      font-weight:bold;
+      color: black;
+      font-weight: bold;
       opacity: 1;
     }
   }
@@ -28,9 +28,10 @@ const NavItem = styled.div`
 const Menu = ({ menu }: Props) => {
   const strippedMenu = menu.replace(`<ul>`, "").replace(`</ul>`, "");
   const rawItems = strippedMenu.match(/"#.*">/g);
-  const slicedItems = rawItems.map(item => item.slice(2, item.length - 2));
+  const slicedItems = rawItems
+    ? rawItems.map(item => item.slice(2, item.length - 2))
+    : [];
 
-  console.log(slicedItems);
   return (
     <nav className={styles["menu"]}>
       <Scrollspy currentClassName="active" items={slicedItems} offset={-64}>

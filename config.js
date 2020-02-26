@@ -3,12 +3,12 @@
 module.exports = {
   url: "https://lumen.netlify.com",
   pathPrefix: "/",
-  title: "Blog by John Doe",
+  title: "DS Bang",
   subtitle:
-    "Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.",
+  "개발자 꿈나무입니다. Django, React 등 백엔드/프론트 전반적으로 관심 많아요",
   copyright: "© All rights reserved.",
-  disqusShortname: "",
-  postsPerPage: 4,
+  disqusShortname: "dsbang",
+  postsPerPage: 5,
   googleAnalyticsId: "UA-73379983-2",
   useKatex: false,
   menu: [
@@ -30,10 +30,10 @@ module.exports = {
     }
   ],
   author: {
-    name: "John Doe",
-    photo: "/photo.jpg",
+    name: "DS Bang",
+    photo: "/avataaars.png",
     bio:
-      "Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.",
+      "개발자 꿈나무입니다. Django, React 등 백엔드/프론트 전반적으로 관심 많아요",
     contacts: {
       email: "",
       facebook: "#",

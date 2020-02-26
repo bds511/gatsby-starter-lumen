@@ -1,17 +1,22 @@
-import React, { PureComponent } from 'react';
-import Chips, { Chip } from 'react-chips'
+import React, { PureComponent } from "react";
+import Chips from "react-chips";
 
-export default class TagWidget extends PureComponent {
+export default class CustomWidgetControl extends PureComponent {
   onChange = chips => {
-    this.props.onChange({chips});
-  }
-
+    this.props.onChange(chips);
+  };
   render() {
     return (
-      <Chips
-        suggetion={["hello","good"]}
-        onChange={this.onChange}
-      />
+      <div>
+        <Chips
+          suggestions={[]}
+          onChange={this.onChange}
+          value={this.props.value}
+          createChipKeys={[13]}
+        />
+      </div>
     );
   }
 }
+
+
