@@ -38,5 +38,5 @@ export const PostHit = clickHandler => ({ hit }) => (
     </div>
     <Snippet attribute="excerpt" hit={hit} tagName="mark" />
   </div>
-
+1
 )
