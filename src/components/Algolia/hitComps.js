@@ -6,7 +6,7 @@ import { Tags } from "styled-icons/fa-solid/Tags"
 
 export const PageHit = clickHandler => ({ hit }) => (
   <div>
-    <Link to={hit.slug} onClick={clickHandler}>
+    <Link to={hit.fields.slug} onClick={clickHandler}>
       <h4>
         <Highlight attribute="title" hit={hit} tagName="mark" />
       </h4>
@@ -17,7 +17,7 @@ export const PageHit = clickHandler => ({ hit }) => (
 
 export const PostHit = clickHandler => ({ hit }) => (
   <div>
-    <Link to={`/blog` + hit.slug} onClick={clickHandler}>
+    <Link to={hit.fields.slug} onClick={clickHandler}>
       <h4>
         <Highlight attribute="title" hit={hit} tagName="mark" />
       </h4>

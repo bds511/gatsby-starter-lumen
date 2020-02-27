@@ -52,7 +52,7 @@ const expand = css`
 
 export const Input = styled.input`
   outline: none;
-  border: none;
+  border: 1px black solid;
   font-size: 1em;
   background: transparent;
   transition: ${props => props.theme.shortTrans};
