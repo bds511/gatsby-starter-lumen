@@ -29,12 +29,12 @@ export const PostHit = clickHandler => ({ hit }) => (
       &emsp;
       <Tags size="1em" />
       &nbsp;
-      {hit.tags.map((tag, index) => (
+      {hit.tags?hit.tags.map((tag, index) => (
         <Fragment key={tag}>
           {index > 0 && `, `}
           {tag}
         </Fragment>
-      ))}
+      )):null}
     </div>
     <Snippet attribute="excerpt" hit={hit} tagName="mark" />
   </div>
