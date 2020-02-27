@@ -2,6 +2,7 @@
 @import "../../assets/scss/mixins";
 
 .sidebar {
+  display: none;
   width: 100%;
   position: relative;
   padding: 0px;
@@ -17,7 +18,7 @@
     &__inner {
       padding: 30px 20px 0;
       width: 100%;
-      &:after {
+      &:before {
         background: $color-gray-border;
         background: linear-gradient(
           to bottom,
@@ -30,7 +31,7 @@
         width: 1px;
         height: 540px;
         top: 30px;
-        left: -10px;
+        left: 40px;
         bottom: 0;
       }
     }
@@ -47,5 +48,11 @@
       padding: 10px;
       width: 300px;
     }
+  }
+}
+
+@include breakpoint-lg {
+  .sidebar {
+    display: block;
   }
 }
