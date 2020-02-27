@@ -1,5 +1,5 @@
 // @flow strict
-import React, { useState, useEffect, createRef } from "react";
+import React, { useState, useRef, useEffect, createRef } from "react";
 import {
   InstantSearch,
   Index,
@@ -11,24 +11,21 @@ import algoliasearch from "algoliasearch/lite";
 import { Root, HitsWrapper, PoweredBy } from "./styles";
 import Input from "./Input";
 import * as hitComps from "./hitComps";
-import {ThemeProvider} from "styled-components"
+import { ThemeProvider } from "styled-components";
 
 const useClickOutside = (ref, handler, events) => {
   if (!events) events = [`mousedown`, `touchstart`];
-  const detectClickOutside = event =>
+  const detectClickOutside = event => 
     ref.current && event && !ref.current.contains(event.target) && handler();
-  useEffect(() => {
-    for (const event of events)
-      document.addEventListener(event, detectClickOutside);
-    return () => {
+    useEffect(() => {
       for (const event of events)
-        document.removeEventListener(event, detectClickOutside);
-    };
-  });
+        document.addEventListener(event, detectClickOutside);
+      return () => {
+        for (const event of events)
+          document.removeEventListener(event, detectClickOutside);
+      };
+    });
 };
-
-
-
 
 export default function Search({ indices, collapse, hitsAsGrid }) {
   const ref = createRef();
@@ -38,7 +35,7 @@ export default function Search({ indices, collapse, hitsAsGrid }) {
     process.env.GATSBY_ALGOLIA_APP_ID,
     process.env.GATSBY_ALGOLIA_SEARCH_KEY
   );
-  
+
   const theme = {
     main: "mediumseagreen"
   };
@@ -55,29 +52,35 @@ export default function Search({ indices, collapse, hitsAsGrid }) {
   );
 
   useClickOutside(ref, () => setFocus(false));
+
   return (
     <ThemeProvider theme={theme}>
-    <InstantSearch
-      searchClient={searchClient}
-      indexName={indices[0].name}
-      onSearchStateChange={({ query }) => setQuery(query)}
-      root={{ Root, props: { ref } }}
-    >
-      <Input onFocus={() => setFocus(true)} {...{ collapse, focus }} />
-      <HitsWrapper show={query.length > 0 && focus} asGrid={hitsAsGrid}>
-        {indices.map(({ name, title, hitComp }) => (
-          <Index key={name} indexName={name}>
-            <header>
-              <h3>{title}</h3>
-              <Stats />
-            </header>
-            <Results>
-              <Hits hitComponent={hitComps[hitComp](() => setFocus(false))} />
-            </Results>
-          </Index>
-        ))}
-        <PoweredBy />
-      </HitsWrapper>
-    </InstantSearch></ThemeProvider>
+      <Root ref={ref}>
+        <InstantSearch
+          searchClient={searchClient}
+          indexName={indices[0].name}
+          onSearchStateChange={({ query }) => setQuery(query)}
+          root={{ Root, props: { ref } }}
+        >
+          <Input onFocus={() => setFocus(true)} {...{ collapse, focus }} />
+          <HitsWrapper show={query.length > 0 && focus} asGrid={hitsAsGrid}>
+            {indices.map(({ name, title, hitComp }) => (
+              <Index key={name} indexName={name}>
+                <header>
+                  <h3>{title}</h3>
+                  <Stats />
+                </header>
+                <Results>
+                  <Hits
+                    hitComponent={hitComps[hitComp](() => setFocus(false))}
+                  />
+                </Results>
+              </Index>
+            ))}
+            <PoweredBy />
+          </HitsWrapper>
+        </InstantSearch>
+      </Root>
+    </ThemeProvider>
   );
 }

@@ -9,14 +9,15 @@ import { useSiteMetadata } from "../../hooks";
 import Search from "../Algolia";
 
 type Props = {
-  isIndex?: boolean
+  isIndex?: boolean,
+  open?: boolean
 };
 
 const searchIndices = [
   // { name: `Pages`, title: `Pages`, hitComp: `PageHit` },
   { name: `Posts`, title: `Blog Posts`, hitComp: `PostHit` }
 ];
-const Sidebar = ({ isIndex }: Props) => {
+const Sidebar = ({ isIndex, open }: Props) => {
   const { author, copyright, menu } = useSiteMetadata();
 
   return (
@@ -24,7 +25,7 @@ const Sidebar = ({ isIndex }: Props) => {
       <div className={styles["sidebar__inner"]}>
         <Author author={author} isIndex={isIndex} />
         <Search collapse indices={searchIndices} />
-        <Menu menu={menu} />
+        <Menu menu={menu} open={open} />
         <Contacts contacts={author.contacts} />
         <Copyright copyright={copyright} />
       </div>

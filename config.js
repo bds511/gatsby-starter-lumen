@@ -36,11 +36,11 @@ module.exports = {
       "개발자 꿈나무입니다. Django, React 등 백엔드/프론트 전반적으로 관심 많아요",
     contacts: {
       email: "dsbang02@gmail.com",
-      facebook: "pypy7000@korea.ac.kr",
-      github: "https://github.com/bds511",
+      facebook: "daeseungbang",
+      github: "bds511",
       rss: "",
-      linkedin: "#",
-      instagram: "#",
+      linkedin: "daeseungbang",
+      instagram: "daeseung_bang",
     }
   }
 };

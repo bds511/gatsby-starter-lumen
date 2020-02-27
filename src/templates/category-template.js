@@ -31,7 +31,7 @@ const CategoryTemplate = ({ data, pageContext }: Props) => {
 
   return (
     <Layout title={pageTitle} description={siteSubtitle}>
-      <Sidebar />
+      <Sidebar open />
       <Page title={category}>
         <Feed edges={edges} />
         <Pagination

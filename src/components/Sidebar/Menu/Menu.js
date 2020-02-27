@@ -8,13 +8,14 @@ import { useCategoriesList } from "../../../hooks";
 type Props = {
   menu: {
     label: string,
-    path: string
+    path: string,
+    open: Boolean
   }[]
 };
 
-const Menu = ({ menu }: Props) => {
+const Menu = ({ menu,open }: Props) => {
   const categories = useCategoriesList();
-  const [opened, setOpend] = useState(true);
+  const [opened, setOpend] = useState(open);
 
   return (
     <nav className={styles["menu"]}>

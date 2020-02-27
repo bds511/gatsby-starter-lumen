@@ -27,7 +27,7 @@ const PostTemplate = ({ data }: Props) => {
 
   return (
     <>
-      <Sidebar />
+      <Sidebar open />
       <Layout
         title={`${postTitle} - ${siteTitle}`}
         description={metaDescription}
