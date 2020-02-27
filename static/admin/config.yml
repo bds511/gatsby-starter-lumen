@@ -31,7 +31,7 @@ collections:
           label: "Category",
           name: "category",
           widget: "select",
-          options: ["Django", "React", "Vue", "기타 프론트", "TIL"],
+          options: ["Django", "React", "Vue", "알고리즘", "TIL", "기타","일상"],
         }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Tags", name: "tags", widget: "tags" }
