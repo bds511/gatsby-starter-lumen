@@ -9,7 +9,7 @@ const pageQuery = `{
         frontmatter {
           title
         }
-        field{slug}
+        fields{slug}
         excerpt(pruneLength: 5000)
       }
     }
@@ -26,7 +26,7 @@ const postQuery = `{
           title
           tags
         }
-        field{slug}
+        fields{slug}
         excerpt(pruneLength: 5000)
       }
     }
