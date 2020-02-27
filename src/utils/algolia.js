@@ -7,10 +7,8 @@ const pageQuery = `{
   ) {
     edges {
       node {
-        objectID: id
         frontmatter {
           title
-          slug
         }
         excerpt(pruneLength: 5000)
       }
@@ -24,11 +22,8 @@ const postQuery = `{
   ) {
     edges {
       node {
-        objectID: id
         frontmatter {
           title
-          slug
-          date(formatString: "MMM D, YYYY")
           tags
         }
         excerpt(pruneLength: 5000)
