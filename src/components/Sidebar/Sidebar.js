@@ -13,7 +13,7 @@ type Props = {
 };
 
 const searchIndices = [
-  { name: `Pages`, title: `Pages`, hitComp: `PageHit` },
+  // { name: `Pages`, title: `Pages`, hitComp: `PageHit` },
   { name: `Posts`, title: `Blog Posts`, hitComp: `PostHit` }
 ];
 const Sidebar = ({ isIndex }: Props) => {

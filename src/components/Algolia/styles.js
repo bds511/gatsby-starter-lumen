@@ -51,18 +51,19 @@ const expand = css`
 
 export const Input = styled.input`
   outline: none;
-  border: 1em;
+  float:left;
+  border: 0px;
+  border-bottom: 1px solid #CCC;
+  color: #555;
+  font-family: 'Arvo';
   font-size: 1em;
   background: transparent;
-  transition: ${props => props.theme.shortTrans};
-  border-radius: ${props => props.theme.smallBorderRadius};
   {highlight-next-line}
-  ${props => (props.collapse ? collapse : expand)};
 `
 
 export const Form = styled.form`
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   align-items: center;
 `
 
@@ -74,7 +75,6 @@ export const HitsWrapper = styled.div`
   -webkit-overflow-scrolling: touch;
   position: absolute;
   right: 0;
-  top: calc(100% + 0.5em);
   width: 80vw;
   max-width: 30em;
   box-shadow: 0 0 5px 0;
