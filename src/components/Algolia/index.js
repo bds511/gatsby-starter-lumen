@@ -1,3 +1,4 @@
+// @flow strict
 import React, { useState, useEffect, createRef } from "react";
 import {
   InstantSearch,
@@ -10,6 +11,7 @@ import algoliasearch from "algoliasearch/lite";
 import { Root, HitsWrapper, PoweredBy } from "./styles";
 import Input from "./Input";
 import * as hitComps from "./hitComps";
+import {ThemeProvider} from "styled-components"
 
 const useClickOutside = (ref, handler, events) => {
   if (!events) events = [`mousedown`, `touchstart`];
@@ -25,6 +27,9 @@ const useClickOutside = (ref, handler, events) => {
   });
 };
 
+
+
+
 export default function Search({ indices, collapse, hitsAsGrid }) {
   const ref = createRef();
   const [query, setQuery] = useState(``);
@@ -33,7 +38,10 @@ export default function Search({ indices, collapse, hitsAsGrid }) {
     process.env.GATSBY_ALGOLIA_APP_ID,
     process.env.GATSBY_ALGOLIA_SEARCH_KEY
   );
-
+  
+  const theme = {
+    main: "mediumseagreen"
+  };
   const Results = connectStateResults(
     ({ searchState: state, searchResults: res, children }) =>
       res && res.nbHits > 0 ? children : `No results for '${state.query}'`
@@ -48,6 +56,7 @@ export default function Search({ indices, collapse, hitsAsGrid }) {
 
   useClickOutside(ref, () => setFocus(false));
   return (
+    <ThemeProvider theme={theme}>
     <InstantSearch
       searchClient={searchClient}
       indexName={indices[0].name}
@@ -69,6 +78,6 @@ export default function Search({ indices, collapse, hitsAsGrid }) {
         ))}
         <PoweredBy />
       </HitsWrapper>
-    </InstantSearch>
+    </InstantSearch></ThemeProvider>
   );
 }

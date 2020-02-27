@@ -1,3 +1,4 @@
+// @flow strict
 import React from "react"
 import { connectSearchBox } from "react-instantsearch-dom"
 

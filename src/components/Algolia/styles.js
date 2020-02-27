@@ -41,7 +41,6 @@ const collapse = css`
 `
 
 const expand = css`
-  background: ${props => props.theme.veryLightGray};
   width: 6em;
   margin-left: -1.6em;
   padding-left: 1.6em;
@@ -52,7 +51,7 @@ const expand = css`
 
 export const Input = styled.input`
   outline: none;
-  border: 1px black solid;
+  border: 1em;
   font-size: 1em;
   background: transparent;
   transition: ${props => props.theme.shortTrans};

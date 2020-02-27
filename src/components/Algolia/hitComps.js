@@ -1,3 +1,4 @@
+// @flow strict
 import React, { Fragment } from "react"
 import { Highlight, Snippet } from "react-instantsearch-dom"
 import { Link } from "gatsby"
