@@ -2,6 +2,9 @@
 
 const siteConfig = require("./config.js");
 const postCssPlugins = require("./postcss-config.js");
+require("dotenv").config();
+
+const queries = require("./src/utils/algolia");
 
 module.exports = {
   pathPrefix: siteConfig.pathPrefix,
@@ -15,6 +18,16 @@ module.exports = {
     author: siteConfig.author
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
+        apiKey: process.env.ALGOLIA_ADMIN_KEY,
+        queries,
+        chunkSize: 10000 // default: 1000
+      }
+    },
+    `gatsby-plugin-styled-components`,
     {
       resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
       options: {

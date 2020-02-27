@@ -39,11 +39,13 @@
   ],
   "dependencies": {
     "@gatsby-contrib/gatsby-plugin-elasticlunr-search": "^2.3.0",
+    "babel-plugin-styled-components": "^1.10.7",
     "bluebird": "^3.7.2",
     "classnames": "^2.2.6",
     "codecov": "^3.6.5",
     "gatsby": "^2.19.19",
     "gatsby-link": "^2.2.29",
+    "gatsby-plugin-algolia": "^0.5.0",
     "gatsby-plugin-catch-links": "^2.1.25",
     "gatsby-plugin-feed": "^2.3.27",
     "gatsby-plugin-flow": "^1.1.19",
@@ -57,6 +59,7 @@
     "gatsby-plugin-sass": "^2.1.29",
     "gatsby-plugin-sharp": "^2.4.5",
     "gatsby-plugin-sitemap": "^2.2.27",
+    "gatsby-plugin-styled-components": "^3.1.19",
     "gatsby-remark-autolink-headers": "^2.1.24",
     "gatsby-remark-copy-linked-files": "^2.1.37",
     "gatsby-remark-external-links": "0.0.4",
@@ -82,8 +85,10 @@
     "react-disqus-comments": "^1.4.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
+    "react-instantsearch-dom": "^6.3.0",
     "react-scrollspy": "^3.4.2",
-    "styled-components": "^5.0.1"
+    "styled-components": "^5.0.1",
+    "styled-icons": "^9.5.0"
   },
   "devDependencies": {
     "@babel/core": "7.8.4",
