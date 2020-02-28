@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Sidebar from '../components/Sidebar';
 import Page from '../components/Page';
+import Content from '../components/Post/Content';
 import { useSiteMetadata } from '../hooks';
 import type { MarkdownRemark } from '../types';
 

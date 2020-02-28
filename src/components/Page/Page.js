@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import styles from './Page.module.scss';
 
+
 type Props = {
   title?: string,
   children: React.Node

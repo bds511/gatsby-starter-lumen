@@ -13,7 +13,7 @@ const TableOfContents = ({ post }: Props) => {
   return (
     <div className={styles['sidebar']}>
       <div className={styles['sidebar__inner']}>
-        <Menu menu={tableOfContents} />
+        <Menu menu={decodeURI(tableOfContents)} />
       </div>
     </div>
   );

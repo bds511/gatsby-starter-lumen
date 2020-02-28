@@ -45,8 +45,10 @@ export const query = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html
+      rawMarkdownBody
       tableOfContents(
         absolute: false
+        maxDepth:3
       )
       fields {
         slug
