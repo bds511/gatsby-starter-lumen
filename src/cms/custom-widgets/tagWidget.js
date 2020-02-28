@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 import Chips from "react-chips";
 
+
 export default class CustomWidgetControl extends PureComponent {
   onChange = chips => {
     this.props.onChange(chips);

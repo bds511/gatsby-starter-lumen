@@ -3,7 +3,7 @@ template: post
 title: Gatsby+Netlify로 나만의 블로그 갖기(2)
 draft: false
 date: 2020-02-28T12:05:18.634Z
-description: 'Gatsby로 블로그 만들면서, 어떻게 만들었는가와 대충 후기를 남기겠습니다.'
+description: 'Gatsby로 블로그를 시작해서 글을 작성하기 까지'
 category: React
 tags:
   - React
